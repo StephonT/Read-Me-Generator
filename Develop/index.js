@@ -1,13 +1,36 @@
-// TODO: Include packages needed for this application
+// Defining inquirer so questions can be prompt to user
+const inquirer = require('inquirer');
 
-// TODO: Create an array of questions for user input
-const questions = [];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Defining fs so fs.writeFile can be used
+const fs = require('fs');
 
-// TODO: Create a function to initialize app
-function init() {}
+// Used require so that generateReadMe function in generateMarkdown.js can be used in this module
+const generateReadMe = require('./utils/generateMarkdown.js');
 
-// Function call to initialize app
-init();
+// Variable created to hold the generateReadMe function. Placed it in fs.writeFile as a parameter so we aren't using a function as a parameter.
+const pageREADME = generateReadMe();
+
+
+// Wrapped inquirer.prompt() in a function so that it can be invoked on demand within the flow of the application.
+const promptUser = () => {
+    return inquirer.prompt ([
+       {
+
+       } 
+    ])
+}
+
+
+
+
+
+
+
+//function to create file
+fs.writeFile('README.md', pageREADME , err => {
+    if (err) throw new Error (err);
+
+    console.log('README has been successfully created!');
+});
+
