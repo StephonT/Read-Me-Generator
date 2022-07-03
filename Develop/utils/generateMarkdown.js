@@ -5,4 +5,4 @@ const generateReadMe = () => {
 }
 
 //
-module.exports = generateMarkdown;
+module.exports = generateReadMe;
