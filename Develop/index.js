@@ -1,5 +1,6 @@
 // Defining inquirer so questions can be prompt to user
 const inquirer = require('inquirer');
+const generateReadMe = require('./utils/generateMarkdown');
 
 
 // Defining fs so fs.writeFile can be used
@@ -124,13 +125,6 @@ const promptUser = () => {
     ]);
 };
 
-promptUser().then(answers => console.log(answers));
-
-
-
-
-
-
 
 //function to create file
 // fs.writeFile('README.md', pageREADME , err => {
@@ -138,4 +132,28 @@ promptUser().then(answers => console.log(answers));
 
 //     console.log('README has been successfully created!');
 // });
+
+
+
+// function call to initialize program
+promptUser()
+.then(answers => {
+    return generateReadMe(answers);
+})
+// using data to display on page
+.then(answers => {
+    return writeFile(answers);
+})
+// //catching errors
+.catch(err => {
+    console.log(err);
+})
+
+
+
+
+
+
+
+
 
