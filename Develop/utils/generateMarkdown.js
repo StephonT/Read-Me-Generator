@@ -37,5 +37,5 @@ const generateReadMe = answers => {
   `
 }
 
-//
+// This allows the function to be exported to another module so it can be used.
 module.exports = generateReadMe;
