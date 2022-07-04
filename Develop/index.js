@@ -1,7 +1,6 @@
 // Defining inquirer so questions can be prompt to user
 const inquirer = require('inquirer');
-const generateReadMe = require('./utils/generateMarkdown');
-
+ 
 
 // Defining fs so fs.writeFile can be used
 // const fs = require('fs');
@@ -106,6 +105,24 @@ const promptUser = () => {
                 } else {
                     console.log('Please enter a usage description!');
                     return false; 
+                }
+            }
+    },
+    {
+            type: 'confirm',
+            name: 'confirmCredit',
+            message: 'Would you like to give credit to collaborators or list references?',
+            default: false
+    },
+    {
+            type: 'input',
+            name: 'credit',
+            message: 'List collaborators or references:',
+            when: ({ confirmCredit }) => {
+                if (confirmCredit) {
+                    return true;
+                } else {
+                    return false;
                 }
             }
     },
