@@ -3,7 +3,6 @@
 const generateReadMe = answers => {
   return `
   # ${answers.title}
-  
   ![Github licence](http://img.shields.io/badge/license-${answers.license}-blue.svg)
 
   ## Description
@@ -18,7 +17,7 @@ const generateReadMe = answers => {
   * [Questions](#questions)
 
   ## Installation
-  ${answers.installation}
+  ${answers.install}
 
   ## Usage
   ${answers.usage}
@@ -33,7 +32,7 @@ const generateReadMe = answers => {
   ${answers.test}
 
   ## Questions
-  ${answers.usage}
+  If you have any questions about this project, please contact me directly at ${answers.email}. You can view more of my projects at https://github.com/${answers.github}.
   
   `
 }

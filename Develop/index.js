@@ -3,13 +3,11 @@ const inquirer = require('inquirer');
  
 
 // Defining fs so fs.writeFile can be used
-// const fs = require('fs');
+const fs = require('fs');
 
 // Used require so that generateReadMe function in generateMarkdown.js can be used in this module
-// const generateReadMe = require('./utils/generateMarkdown.js');
+const generateReadMe = require('./utils/generateMarkdown.js');
 
-// Variable created to hold the generateReadMe function. Placed it in fs.writeFile as a parameter so we aren't using a function as a parameter.
-// const pageREADME = generateReadMe();
 
 
 // Wrapped inquirer.prompt() in a function so that it can be invoked on demand within the flow of the application.
@@ -109,24 +107,6 @@ const promptUser = () => {
             }
     },
     {
-            type: 'confirm',
-            name: 'confirmCredit',
-            message: 'Would you like to give credit to collaborators or list references?',
-            default: false
-    },
-    {
-            type: 'input',
-            name: 'credit',
-            message: 'List collaborators or references:',
-            when: ({ confirmCredit }) => {
-                if (confirmCredit) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-    },
-    {
             type: 'input',
             name: 'test', 
             message: 'What command should be run to run tests?',
@@ -143,15 +123,6 @@ const promptUser = () => {
 };
 
 
-//function to create file
-// fs.writeFile('README.md', pageREADME , err => {
-//     if (err) throw new Error (err);
-
-//     console.log('README has been successfully created!');
-// });
-
-
-
 // function call to initialize program
 promptUser()
 .then(answers => {
@@ -166,6 +137,20 @@ promptUser()
     console.log(err);
 })
 
+
+//function to create file
+const writeFile = answers => {
+    fs.writeFile('README.md', answers, err => {
+        // if there is an error 
+        if (err) {
+            console.log(err);
+            return;
+        // when the README has been created 
+        } else {
+            console.log("Your README has been successfully created!")
+        }
+    })
+}; 
 
 
 
