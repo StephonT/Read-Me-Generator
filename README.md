@@ -17,6 +17,7 @@
 
   ## Usage
   Use inquirer from your command line to answer questions about your project.
+  Or view link here - <a href="C:\Users\steph\Downloads\README Generator Functionality.webm">Screencastify</a>
 
   ## License
   This project is license under MIT
