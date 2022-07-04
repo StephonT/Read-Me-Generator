@@ -17,9 +17,8 @@
 
   ## Usage
   Use inquirer from your command line to answer questions about your project.
-  <br>
-  <br>
 
+  ## Links
   Please click the Screencastify link to see a walkthrough video that demonstrates its functionality - <a href="https://drive.google.com/file/d/1mZ2eHAG5tbQAS4MWS7temCrmIOgu92iV/view">Screencastify</a>
 
   ## License
@@ -33,3 +32,5 @@
 
   ## Questions
   If you have any questions about this project, please contact me directly at streadwe@gmail.com. You can view more of my projects at https://github.com/StephonT.
+
+  
